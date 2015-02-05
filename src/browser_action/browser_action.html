@@ -1,0 +1,61 @@
+<!doctype html>
+<head>
+		<!-- javascript file -->
+	<script LANGUAGE="JavaScript">
+	//Our arraylists for our numbers and operators
+	var operators = [];
+	var numbers = [];
+
+//Function to compute answer and display it in text
+function compute()
+{
+	alert("Working!");
+	//Get the input from the text box
+	var input = document.getElementById('inputBox').value;
+	
+	//Output answer
+	document.getElementById("answer").value = "Sonic The Hedgehog";
+	
+}
+
+function popup(e) {
+  var link = document.URL;
+  alert("This is the Link : ( " +link+ " )");
+}
+
+var plusBtn = document.querySelector('.plus');
+plusBtn.addEventListener('click', popup);
+</script>
+</head>
+<style type="text/css">
+	#mainPopup {
+		padding: 5px;
+		height: 100px;
+		width: 400px;
+		font-family: Helvetica, Ubuntu, Arial, sans-serif;
+	}
+	h1 {
+		font-size: 2em;
+	}
+</style>
+
+<div id="mainPopup">
+	<!-- Header-->
+<h1>Calcuscript</h1>
+
+<!-- Input -->
+	<div>
+		<form>
+		<center>Enter Math Here:</center><br>
+		<input id = "inputBox" type="text" name="newnote" size="50" 
+		onkeydown="compute()">
+		</form>
+	<br>
+	
+<!-- Output -->
+
+		<center><font size = "8">Your Answer is:</font></center>
+		<br>
+		<center><font size = "8" id = "answer"></font></center>
+	</div>
+</div>
