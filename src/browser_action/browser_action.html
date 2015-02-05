@@ -1,20 +1,22 @@
 <!doctype html>
 <head>
 		<!-- javascript file -->
-	<script LANGUAGE="JavaScript">
-	//Our arraylists for our numbers and operators
-	var operators = [];
-	var numbers = [];
+<script language="JavaScript">
+//Our arraylists for our numbers and operators
+var operators = [];
+var numbers = [];
 
 //Function to compute answer and display it in text
 function compute()
 {
-	alert("Working!");
+	//alert("Working!");
 	//Get the input from the text box
 	var input = document.getElementById('inputBox').value;
 	
+	alert(input);
+	
 	//Output answer
-	document.getElementById("answer").value = "Sonic The Hedgehog";
+	document.getElementById('answer').value = "Sonic The Hedgehog";
 	
 }
 
@@ -48,7 +50,7 @@ plusBtn.addEventListener('click', popup);
 		<form>
 		<center>Enter Math Here:</center><br>
 		<input id = "inputBox" type="text" name="newnote" size="50" 
-		onkeydown="compute()">
+		onkeyup="compute()">
 		</form>
 	<br>
 	
