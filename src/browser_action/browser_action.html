@@ -5,28 +5,98 @@
 //Our arraylists for our numbers and operators
 var operators = [];
 var numbers = [];
+var answer;
+var order = ["^", "*", "/", "+", "-"];
 
 //Function to compute answer and display it in text
 function compute()
 {
-	//alert("Working!");
-	//Get the input from the text box
+	//Get the input from the text box, working
 	var input = document.getElementById('inputBox').value;
 	
-	alert(input);
+	//parse the string
+	parseInput(input);
 	
-	//Output answer
-	document.getElementById('answer').value = "Sonic The Hedgehog";
+	//performing math
+	//Need to makesure opertators is not null or zero
+	if(operators != null && operators.length > 0)
+	{
+		//perform math
+		//make order of operations array
+		//loop for order of operations
+		for(i = 0; i < order.length; i++)
+		{
+			//loop for doing math if those operators exist
+			for(ii = 0; ii < operators.length; ii++)
+			{
+				if(operators[ii] == order[i] && numbers.length >= 2)
+				{
+					var tempAnswer;
+					//Exponent
+					if(i == "^")
+					{
+						//The orignial number we are powering
+						var base = numbers[ii * 2];
+						tempAnswer = base;
+						//multiple number by itself that many times
+						for(var j = 0; j < (ii * 2 + 1); j++)
+						{
+							tempAnswer = tempAnswer * base;
+						}
+					}
+					//Multiplication
+					else if(i == "*")
+					{
+						tempAnswer = numbers[ii * 2] * numbers[ii * 2 + 1];
+					}
+					//Division
+					else if(i == "/")
+					{
+						tempAnswer = numbers[ii * 2] / numbers[ii * 2 + 1];
+					}
+					//Addition
+					else if(i == "+")
+					{
+						tempAnswer = numbers[ii * 2] + numbers[ii * 2 + 1];
+					}
+					//Subtraction
+					else if(i == "-")
+					{
+						tempAnswer = numbers[ii * 2] - numbers[ii * 2 + 1];
+					}
+					
+					//Lastly replace the old numbers and remove the operators
+					//Using splice method
+					numbers.splice(ii * 2, 2, tempAnswer);
+					operators.splice(ii, 1);
+				}
+			}
+		}
+	}
+	//The last remaining number is the answer
+	if(numbers != null && numbers.length > 0)
+	{
+		answer = numbers[0];
+	}
+	//Output answer, working
+	document.getElementById('answer').innerHTML = answer;
 	
 }
 
-function popup(e) {
-  var link = document.URL;
-  alert("This is the Link : ( " +link+ " )");
+//Function to parse our input into operators and numbers
+function parseInput(math)
+{
+	//parse the numbers and operators
+	//Using Character quotes for ^ since its special
+	operators = math.match(/[-*+/'^']/g);
+	//Need to parse the floats of the string, but need to split the string first
+	math.split();
+	
+	alert(math);
+	
+	numbers = math.match(/[0-9]/g);
+	
 }
-
-var plusBtn = document.querySelector('.plus');
-plusBtn.addEventListener('click', popup);
 </script>
 </head>
 <style type="text/css">
@@ -58,6 +128,6 @@ plusBtn.addEventListener('click', popup);
 
 		<center><font size = "8">Your Answer is:</font></center>
 		<br>
-		<center><font size = "8" id = "answer"></font></center>
+		<center><font size = "8"><p id = "answer"></p></font></center>
 	</div>
 </div>
