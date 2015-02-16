@@ -19,6 +19,9 @@ var priorityRegex = /[-*x+/^%()]/g;
 jQuery(document).ready(function($) {
 	var inputBox = document.getElementById("inputBox");
     inputBox.addEventListener("keyup",compute);
+    
+    var clearButton = document.getElementById("clearButton");
+    clearButton.addEventListener("click",clear);
 });
 
 //Function to compute answer and display it in text
@@ -147,12 +150,12 @@ function performMath()
 			//make order of operations array
 			//loop for order of operations
 			console.log("START!!!!!!!!");
-			console.log(operators);
-			console.log(operatorOrder);
 				//loop for doing math if those operators exist
 				while(operators.length > 0 && numbers.length >= operators.length)
 				{
-					console.log("priority array: " + operatorOrder);
+					console.log("Operator order array: " + operatorOrder);
+					console.log("Operator array: " + operators);
+					console.log("Numbersarray: " + numbers);
 					//Find the highest priority operator
 					var index = 0;
 					for(i = 0; i < operatorOrder.length; i++)
@@ -162,6 +165,9 @@ function performMath()
 							index = i;
 						}
 					}
+					
+					console.log("Index: " + index);
+					console.log("numbers[index + 1]: " + numbers[index + 1]);
 					
 					//If we are currently doing the operator in order of operations,
 					//and they are more numbers than operators or an equal amount (as it should be)
@@ -210,11 +216,16 @@ function performMath()
 						//also need to splice our priority
 						operatorOrder.splice(index, 1);
 					}
-					//failsafe to exit the loop when we have even number of operators 
+					//failsafe to exit the loop when we have even number of operators
+					//or other random errors that would cause an infinite loop
 					//and stuff after evaluating an expressions
-					else if(numbers.length == operators.length)
+					else
 					{
-						operators.pop();
+						if(numbers.length == operators.length)
+						{
+							operators.pop();
+							operatorOrder.pop();
+						}
 					}
 				}
 			}
@@ -226,3 +237,11 @@ function performMath()
 		}
 		
 	}
+	
+//function to clear the screen through the clear button
+function clear()
+{
+	//Input Box and answer
+	document.getElementById('inputBox').value = "";
+	document.getElementById('answer').innerHTML = "";
+}
