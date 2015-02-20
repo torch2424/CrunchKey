@@ -5,10 +5,11 @@ var operatorOrder = [];
 var numbers = [];
 var answer;
 
+//Adding "r" to mean root!
 //Regexes for fetching our input
-var operatorsRegex = /[-*x+/^%]/g;
-var numbersRegex = /[.0-9-*x+/^%]/g;
-var priorityRegex = /[-*x+/^%()]/g;
+var operatorsRegex = /[-*xX+/^%rR]/g;
+var numbersRegex = /[.0-9-*xX+/^%rR]/g;
+var priorityRegex = /[-*xX+/^%()rR]/g;
 
 
 //No longer doing order of operations
@@ -180,8 +181,15 @@ function performMath()
 						{
 							tempAnswer = Math.pow(numbers[index], numbers[index + 1]);
 						}
+						//Root
+						if(operators[index] == "r" || operators[index] == "R")
+						{
+							//1 / number for root
+							tempAnswer = Math.pow(numbers[index], 1 / numbers[index + 1]);
+						}
 						//Multiplication
-						else if(operators[index] == "*" || operators[index] == "x")
+						else if(operators[index] == "*" || operators[index] == "x"
+						|| operators[index] == "X")
 						{
 							console.log(numbers[index] + "," + numbers[index + 1]);
 							tempAnswer = numbers[index] * numbers[index + 1];

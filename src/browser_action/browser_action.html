@@ -1,47 +1,63 @@
 <!doctype html>
 
 <head>
-	<!-- jQuery and javascript file -->
+	<!-- jQuery, javascript, my CSS file, and open source CSS -->
 <script src="jquery.min.js"></script>
 <script src="calcuscript.js"></script>
+<link rel="stylesheet" href="calcuscript.css">
+<link rel="stylesheet" href="animate.css">
+<link rel="stylesheet" href="btns.min.css">
+
 </head>
 
-
+<!-- Chrome extension default CSS -->
 <style type="text/css">
-	#mainPopup {
+	#mainPopup 
+	{
 		padding: 5px;
-		height: 100px;
-		width: 400px;
-		font-family: Helvetica, Ubuntu, Arial, sans-serif;
+		height: 250px;
+		width: 300px;
 	}
-	h1 {
+	h1 
+	{
 		font-size: 2em;
 	}
 </style>
 
-<div id="mainPopup">
+<!-- Main Div -->
+<!--Using animated class to fade in text -->
+<div id="mainPopup" class="animated fadeIn">
+	<body>
 	<!-- Header-->
-<h1><center>Calcuscript</center></h1>
+<div id = "title"><h1><center>Calcuscript</center></h1></div>
 
 <!-- Input -->
-	<div>
+	<div id = "IO">
 		<form>
 		<center>
-			Enter Math Here:
+			<font id="enterMath">Enter Math Here:</font>
 		<br>
+		<input id = "inputBox" type="text" name="newnote" >
 		<br>
-		<input id = "inputBox" type="text" name="newnote" size="50" >
-		<br>
-		<br>
-		<button id= "clearButton" type="button">Clear</button>
+		<!-- Using the buttons open source -->
+		<a href="#" class="btn btn--m btn--gray-border" id= "clearButton">Clear</a>
 		</center>
 		</form>
 	
 <!-- Output -->
 
-		<center><font size = "6">Your Answer is:</font></center>
-		<center><font size = "6" id = "answer"></font></center>
+		<center><font id = "your">Your Answer is:</font></center>
+		<center><font id = "answer"></font></center>
 		<br>
-		<center><font size = "1">(Calculated from left to right, No order of operations, but parentheses are valid)</font></center>
+		<center><font id = "key">Key:
+		<br>
+		<!--Added no wrap so that each element does not get cut off -->
+		<font style="white-space: nowrap;">^ Exponent,</font> <font style="white-space: nowrap;">r Nth Root,</font> <font style="white-space: nowrap;">* Multiplication,</font> 
+		<font style="white-space: nowrap;">/ Division,</font> <font style="white-space: nowrap;">% Remainder(Modulo),</font> <font style="white-space: nowrap;">+ Additon,</font> 
+		<font style="white-space: nowrap;">- Subtraction</font>
+		</font></center>
+		<br>
+		<center><font id = "notice">(Calculated from left to right, No order of operations, but parentheses are valid)<br></font></center>
 	</div>
+	</body>
 </div>
