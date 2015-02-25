@@ -32,8 +32,21 @@ body
 	font-Size: 7.5vmin;
 }
 
+h1
+{
+	line-height: 0px;
+}
+
+#description
+{
+	font-size: 3;
+	/*vw used to dynamically change font size*/
+    font-size: 3.5vmin;
+}
+
 #enterMath
 {
+	font-size: 7;
 	font-size: 7vmin;
 }
 

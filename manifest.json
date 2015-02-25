@@ -1,6 +1,6 @@
 {
   "name": "CrunchKey",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifest_version": 2,
   "description": "Simple Text Based Calculator",
   "homepage_url": "http://aaronturnerapps.tumblr.com",
@@ -18,7 +18,7 @@
   "browser_action": 
 {
     "default_icon": "icons/CrunchKey19.png",
-    "default_title": "browser action demo",
+    "default_title": "CrunchKey",
     "default_popup": "src/browser_action/browser_action.html"
 }
 }
