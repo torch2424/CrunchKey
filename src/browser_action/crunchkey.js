@@ -249,7 +249,26 @@ function performMath()
 //function to clear the screen through the clear button
 function clear()
 {
-	//Input Box and answer
-	document.getElementById('inputBox').value = "";
-	document.getElementById('answer').innerHTML = "";
+	//Get our variables
+	var inputValue = document.getElementById("inputBox");
+	var answer = document.getElementById('answer');
+	
+	
+	
+	//Fade our our variables
+	$(inputValue).add(answer).animate
+	({opacity: 0.0}, 500,
+	function()
+	{
+		//Input Box and answer
+		document.getElementById('inputBox').value = "";
+		document.getElementById('answer').innerHTML = "";
+	});
+	
+	//Fade back in
+	$(inputValue).add(answer).animate
+	({opacity: 1.0}, 500);
+	
+	//to prevent going back to the top of the page
+	event.preventDefault();
 }
