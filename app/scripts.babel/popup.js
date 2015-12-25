@@ -17,6 +17,22 @@ var numbersRegex = /[.0-9-*xX+/^%rR]/g;
 var priorityRegex = /[-*xX+/^%()rR]/g;
 
 // Initialize on page load
+//Function that is called on popup open to get out contents
+function init() {
+
+  // Use default value of nothing
+  chrome.storage.sync.get({
+    extensionCode: ''
+  }, function(items) {
+
+    //In this call back, set the retrieved value
+    document.getElementById('inputBox').value = items.expression;
+    document.getElementById('answer').innerHTML = items.answer;
+
+});
+}
+
+//Functions to call on page load.
 document.addEventListener('DOMContentLoaded', function() {
     inputBox = document.getElementById("inputBox");
     inputBox.addEventListener("keyup",compute);
@@ -24,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var clearButton = document.getElementById("clearButton");
     clearButton.addEventListener("click",clear);
+    init;
 });
 
 //Function to compute answer and display it in text
@@ -246,4 +263,16 @@ function clear()
 
 	//to prevent going back to the top of the page
 	event.preventDefault();
+}
+
+
+
+//Function to save input on close
+window.onunload = function() {
+
+    //Save their info
+    chrome.storage.sync.set({
+      expression: document.getElementById('inputBox').value,
+      answer: document.getElementById('answer').innerHTML
+  });
 }
