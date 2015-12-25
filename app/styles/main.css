@@ -1,3 +1,13 @@
+/* Import the original Styles */
+
+@import url("originalStyles/animate.min.css");
+@import url("originalStyles/btns.min.css");
+@import url("originalStyles/crunchkey.css");
+
+/* Additional Styles */
+
 body {
-  padding: 20px;
+  width: 300px;
+  height: 300px;
+  padding: 10px !important;
 }
