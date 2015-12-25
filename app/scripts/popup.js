@@ -1,5 +1,10 @@
 'use strict';
 
+//This was written when I was first learning Web Dev
+//This code can be improved, and I am open to any
+//Efficiency Pull requests, because currently it works
+//And it is just a simple chrome extension :)
+
 //Our arraylists for our numbers and operators
 var operators = [];
 var priority = [];
@@ -22,7 +27,8 @@ function init() {
 
 	// Use default value of nothing
 	chrome.storage.sync.get({
-		extensionCode: ''
+		expression: '',
+		answer: ''
 	}, function (items) {
 
 		//In this call back, set the retrieved value
@@ -33,14 +39,44 @@ function init() {
 
 //Functions to call on page load.
 document.addEventListener('DOMContentLoaded', function () {
+
+	//Get the input box and focus on it
 	inputBox = document.getElementById("inputBox");
-	inputBox.addEventListener("keyup", compute);
+	inputBox.focus();
+
+	/*
+     Save Input calls compute and then saves
+     Save Input should be called in onbeforeunload
+     However Chrome has a bug where this is not fired
+     for it's extension, and our only reliable connection
+     will be onkeyup, as blur is not called on closing
+     the popup, and we cant interact with the elements
+     of the popup from the background page after it has been
+     unloaded.
+ */
+	inputBox.addEventListener("keyup", saveInput);
 	inputBox.addEventListener("keydown", compute);
 
 	var clearButton = document.getElementById("clearButton");
 	clearButton.addEventListener("click", clear);
-	init;
+
+	//Grab the saved input from last close
+	init();
 });
+
+//Function to save the user input
+//Save the user info whenever the input box is blurred
+function saveInput() {
+
+	//First compute the answer
+	compute();
+
+	//Save their info
+	chrome.storage.sync.set({
+		expression: document.getElementById('inputBox').value,
+		answer: document.getElementById('answer').innerHTML
+	});
+}
 
 //Function to compute answer and display it in text
 function compute() {
@@ -221,17 +257,13 @@ function clear() {
 	document.getElementById('inputBox').value = "";
 	document.getElementById('answer').innerHTML = "";
 
-	//to prevent going back to the top of the page
-	event.preventDefault();
-}
-
-//Function to save input on close
-window.onunload = function () {
-
 	//Save their info
 	chrome.storage.sync.set({
 		expression: document.getElementById('inputBox').value,
 		answer: document.getElementById('answer').innerHTML
 	});
-};
+
+	//to prevent going back to the top of the page
+	event.preventDefault();
+}
 //# sourceMappingURL=popup.js.map
