@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
      will be onkeyup, as blur is not called on closing
      the popup, and we cant interact with the elements
      of the popup from the background page after it has been
-     unloaded.
+     unloaded. I am open to any suggestions!
  */
 	inputBox.addEventListener("keyup", saveInput);
 	inputBox.addEventListener("keydown", compute);
