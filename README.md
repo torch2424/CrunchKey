@@ -3,7 +3,7 @@ Chrome plugin to calculate strings realtime
 
 Please also see the [Ionic Port](https://github.com/torch2424/CrunchKey-Ionic)
 
-![CrunchKey Img](http://aaronthedev.com/images/crunchkeyweb.57ae83d0.png)
+![CrunchKey Img](https://aaronthedev.com/images/crunchkeyweb.ab7bc230.png)
 
 ##Submitting Pull Requests and Issues
 **Please Please Please** Submit any bugs or any fixes you would like fixed about the app. 
@@ -15,10 +15,6 @@ So any help finding and squashing bugs is appreciated :)
 Clone the repo, and open in in a text editor! :) To add to chrome simply go to Settings > Extensions > Load unpacked Extension
 
 
-##License
+## License
 
-All Assets and rights of the application are reserved to Aaron Turner (Me)
-
-However this code is open-source and may be used to help in your own projects
-
-P.S I don't know much about each licenses haha
+Licensed under the [Apache License 2.0](http://choosealicense.com/licenses/apache-2.0/)
