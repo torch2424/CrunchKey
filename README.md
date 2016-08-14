@@ -3,7 +3,7 @@ Chrome plugin to calculate strings realtime
 
 Please also see the [Ionic Port](https://github.com/torch2424/CrunchKey-Ionic)
 
-![CrunchKey Img](https://aaronthedev.com/images/crunchkeyweb.ab7bc230.png)
+![CrunchKey Img](https://files.aaronthedev.com/$/pjsyx)
 
 ##Submitting Pull Requests and Issues
 **Please Please Please** Submit any bugs or any fixes you would like fixed about the app. 
