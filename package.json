@@ -4,8 +4,13 @@
   "description": "A Chrome Extension that calculates math strings as you type them! No order of operations, so the math can flow as you go!",
   "main": "index.js",
   "scripts": {
+    "lint": "prettier . --write --ignore-unknown",
+    "build": "npx bestzip release.zip manifest.json popup.html styles/* styles/**/* js/* js/**/* assets/* assets/**/*",
     "deploy": "npx np --no-publish --no-tests",
-    "build": "npx bestzip release.zip manifest.json popup.html styles/* styles/**/* js/* js/**/* assets/* assets/**/*"
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
   "files": [
     "release.zip"
@@ -22,6 +27,8 @@
   "homepage": "https://github.com/torch2424/CrunchKey#readme",
   "devDependencies": {
     "bestzip": "^2.1.7",
-    "np": "^5.0.3"
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.6.2"
   }
 }

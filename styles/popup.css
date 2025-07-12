@@ -13,79 +13,71 @@ body {
 }
 
 #notice {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 /* The whole content File(Main div)*/
-#wrapper
-{
-	color: #000000;
-	margin: 10px;
+#wrapper {
+  color: #000000;
+  margin: 10px;
   position: relative;
 }
 
 /* Navigation*/
 
-nav
-{
-	  text-align: center;
-    padding: 3.5vmin;
-    font-size: 8px;
-  	/* above is default font sive, botton is to use viewport sizing for responsive design */
-	  font-Size: 5vmin;
-	  border: 2px solid;
-    border-radius: 5.5vmin;
-    display:inline-block;
-    position: fixed;
-    float: left;
-    margin-top: 8%;
+nav {
+  text-align: center;
+  padding: 3.5vmin;
+  font-size: 8px;
+  /* above is default font sive, botton is to use viewport sizing for responsive design */
+  font-size: 5vmin;
+  border: 2px solid;
+  border-radius: 5.5vmin;
+  display: inline-block;
+  position: fixed;
+  float: left;
+  margin-top: 8%;
 }
 
-nav ul
-{
-	 list-style-type: none;
-	 padding: 0;
-     list-style-type: none;
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  list-style-type: none;
 }
 
 /* links in navigation */
-nav a
-{
-    text-decoration: none;
-    color: #000000;
+nav a {
+  text-decoration: none;
+  color: #000000;
 
-    animation-duration: 2s;
-    animation-delay: 1s;
-    -webkit-animation-duration: 2s;
-	-webkit-animation-delay: 1s;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 1s;
 }
 
-nav a:hover
-{
-    text-decoration: underline;
-    color: #000000;
+nav a:hover {
+  text-decoration: underline;
+  color: #000000;
 }
 
-body
-{
-/* setting the ice background, and centering it */
-	background-color: #E8E9EA;
-	margin: 0 auto;
+body {
+  /* setting the ice background, and centering it */
+  background-color: #e8e9ea;
+  margin: 0 auto;
 }
 
-#IO
-{
-	margin-left: 27%;
-  display:inline-block;
+#IO {
+  margin-left: 27%;
+  display: inline-block;
 }
 
 /* Our title*/
-#title
-{
-	font-family: calcFont;
-	font-size: 10px;
-	/* above is default font sive, botton is to use viewport sizing for responsive design */
-	font-Size: 7.5vmin;
+#title {
+  font-family: calcFont;
+  font-size: 10px;
+  /* above is default font sive, botton is to use viewport sizing for responsive design */
+  font-size: 7.5vmin;
 }
 
 /* Our logo, no longer using our logo
@@ -105,213 +97,185 @@ body
 }
 */
 
-h1
-{
-	line-height: 0px;
-	text-shadow: 2px 2px 2px #888888;
-	text-align: center;
+h1 {
+  line-height: 0px;
+  text-shadow: 2px 2px 2px #888888;
+  text-align: center;
   font-size: 20px;
-	/* above is default font sive, botton is to use viewport sizing for responsive design */
-	font-Size: 13vmin;
+  /* above is default font sive, botton is to use viewport sizing for responsive design */
+  font-size: 13vmin;
 }
 
-#description
-{
-	font-size: 3px;
-	/*vw used to dynamically change font size*/
-    font-size: 3.5vmin;
-	text-align: center;
+#description {
+  font-size: 3px;
+  /*vw used to dynamically change font size*/
+  font-size: 3.5vmin;
+  text-align: center;
 }
 
-.center
-{
+.center {
   text-align: center;
   margin: 0 auto;
 }
 
-.center a
-{
-    text-decoration: none;
+.center a {
+  text-decoration: none;
 }
 
-p
-{
+p {
   font-size: 3px;
-	/*vw used to dynamically change font size*/
+  /*vw used to dynamically change font size*/
   font-size: 2.5vmin;
-  margin-left:5%;
+  margin-left: 5%;
 }
 
 iframe {
-  border:0px;
+  border: 0px;
   width: 80vmin;
   height: 60vmin;
 }
 
 form {
-	text-align: center;
+  text-align: center;
 }
 
 #contactHead {
-	text-align: center;
+  text-align: center;
 }
 
-#enterMath
-{
-	font-size: 7px;
-	font-size: 7vmin;
+#enterMath {
+  font-size: 7px;
+  font-size: 7vmin;
 }
 
 /* Our input box*/
-#inputBox
-{
-	width: 85%;
-	margin: 10px;
-	font-family: calcFont;
-	font-size: 7vmin;
+#inputBox {
+  width: 85%;
+  margin: 10px;
+  font-family: calcFont;
+  font-size: 7vmin;
 }
 
-#clearButton
-{
-	font-family: calcFont;
-	font-size: 4vmin;
-}
-
-/*Our answer*/
-#your
-{
-	font-size: 4px;
-	/*vmin used to dynamically change font size*/
-    font-size: 7vmin;
-    text-align: center;
+#clearButton {
+  font-family: calcFont;
+  font-size: 4vmin;
 }
 
 /*Our answer*/
-#answer
-{
-	   font-size: 4px;
-	    /*vw used to dynamically change font size*/
-    font-size: 7vmin;
-    text-align: center;
+#your {
+  font-size: 4px;
+  /*vmin used to dynamically change font size*/
+  font-size: 7vmin;
+  text-align: center;
+}
 
+/*Our answer*/
+#answer {
+  font-size: 4px;
+  /*vw used to dynamically change font size*/
+  font-size: 7vmin;
+  text-align: center;
 }
 
 /*Footer stuff */
-#key
-{
-	font-size: 2px;
-	/*vw used to dynamically change font size*/
-    font-size: 3vmin;
-    text-align: center;
+#key {
+  font-size: 2px;
+  /*vw used to dynamically change font size*/
+  font-size: 3vmin;
+  text-align: center;
 }
 
-.keyelement
-{
-	white-space: nowrap;
-	display:inline;
+.keyelement {
+  white-space: nowrap;
+  display: inline;
 }
 
-footer
-{
-	font-size: 2px;
-	/*vw used to dynamically change font size*/
-    font-size: 3vmin;
-    text-align: center;
+footer {
+  font-size: 2px;
+  /*vw used to dynamically change font size*/
+  font-size: 3vmin;
+  text-align: center;
 }
 
 /* Our mobile designs */
 
-@media only screen and (max-width: 768px)
-{
-	body
-	{
-		margin: 0;
-	}
+@media only screen and (max-width: 768px) {
+  body {
+    margin: 0;
+  }
 
-	#IO
-	{
-		margin-left: 0;
-	}
+  #IO {
+    margin-left: 0;
+  }
 
-	nav
-	{
-    text-align: center;
-    padding: 3.5vmin;
-    font-size: 8px;
-  	/* above is default font sive, botton is to use viewport sizing for responsive design */
-	  font-Size: 5vmin;
-	  border: 2px solid;
-    border-radius: 5.5vmin;
-    display:inline-block;
-    position: static;
-    float: none;
-    margin: 1%;
-	}
-
-	nav ul
-	{
-		text-align: center;
-	}
-
-	nav li
-	{
-		display: inline;
-		padding-top: 0;
-		padding-bottom: 0;
-		padding-left: .75em;
-		padding-right: .75em;
-	}
-
-	footer
-	{
-		margin-left: 0;
-	}
-}
-
-@media only screen and (max-width: 480px)
-{
-	body
-	{
-		margin: 0;
-	}
-
-	#wrapper
-	{
-		min-width: 0;
-		width: auto;
-		margin: 0;
-	}
-
-	#IO
-	{
-		margin: 0 auto;
-		padding-top: .1em;
-		padding-bottom: .1em;
-		padding-left: 1em;
-		padding-right: 1em;
-		font-size: 90%;
-	}
-
-  nav
-  {
+  nav {
     text-align: center;
     padding: 3.5vmin;
     font-size: 8px;
     /* above is default font sive, botton is to use viewport sizing for responsive design */
-    font-Size: 5vmin;
+    font-size: 5vmin;
     border: 2px solid;
     border-radius: 5.5vmin;
-    display:inline-block;
+    display: inline-block;
     position: static;
     float: none;
     margin: 1%;
   }
 
-	#IO img
-	{
-		float: none;
-		padding: 0;
-		margin: .1em;
-	}
+  nav ul {
+    text-align: center;
+  }
+
+  nav li {
+    display: inline;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+
+  footer {
+    margin-left: 0;
+  }
 }
 
+@media only screen and (max-width: 480px) {
+  body {
+    margin: 0;
+  }
+
+  #wrapper {
+    min-width: 0;
+    width: auto;
+    margin: 0;
+  }
+
+  #IO {
+    margin: 0 auto;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 90%;
+  }
+
+  nav {
+    text-align: center;
+    padding: 3.5vmin;
+    font-size: 8px;
+    /* above is default font sive, botton is to use viewport sizing for responsive design */
+    font-size: 5vmin;
+    border: 2px solid;
+    border-radius: 5.5vmin;
+    display: inline-block;
+    position: static;
+    float: none;
+    margin: 1%;
+  }
+
+  #IO img {
+    float: none;
+    padding: 0;
+    margin: 0.1em;
+  }
+}
