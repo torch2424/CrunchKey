@@ -1,6 +1,7 @@
 // This was written when I was first learning Web Dev
 
-const STORAGE_KEY = "crunchkey-storage";
+const EXPRESSION_STORAGE_KEY = "crunchkey-expression";
+const ANSWER_STORAGE_KEY = "crunchkey-answer";
 
 // Our arraylists for our numbers and operators
 var operators = [];
@@ -22,17 +23,10 @@ var priorityRegex = /[-*xX+/^%()rR]/g;
 //Function that is called on popup open to get out contents
 function init() {
   // Use default value of nothing
-  chrome.storage.sync.get(
-    {
-      expression: "",
-      answer: "",
-    },
-    function (items) {
-      //In this call back, set the retrieved value
-      document.getElementById("inputBox").value = items.expression;
-      document.getElementById("answer").innerHTML = items.answer;
-    },
-  );
+  const expression = localStorage.getItem(EXPRESSION_STORAGE_KEY) || "";
+  const answer = localStorage.getItem(ANSWER_STORAGE_KEY) || "";
+  document.getElementById("inputBox").value = expression;
+  document.getElementById("answer").textContent = answer;
 }
 
 //Functions to call on page load.
@@ -54,9 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
   inputBox.addEventListener("keyup", saveInput);
   inputBox.addEventListener("keydown", compute);
 
-  var clearButton = document.getElementById("clearButton");
-  clearButton.addEventListener("click", clear);
-
   //Grab the saved input from last close
   init();
 });
@@ -68,10 +59,14 @@ function saveInput() {
   compute();
 
   //Save their info
-  chrome.storage.sync.set({
-    expression: document.getElementById("inputBox").value,
-    answer: document.getElementById("answer").innerHTML,
-  });
+  localStorage.setItem(
+    EXPRESSION_STORAGE_KEY,
+    document.getElementById("inputBox").value,
+  );
+  localStorage.setItem(
+    ANSWER_STORAGE_KEY,
+    document.getElementById("answer").innerHTML,
+  );
 }
 
 //Function to compute answer and display it in text
@@ -258,10 +253,8 @@ function clear() {
   document.getElementById("answer").innerHTML = "";
 
   //Save their info
-  chrome.storage.sync.set({
-    expression: document.getElementById("inputBox").value,
-    answer: document.getElementById("answer").innerHTML,
-  });
+  localStorage.setItem(EXPRESSION_STORAGE_KEY, "");
+  localStorage.setItem(ANSWER_STORAGE_KEY, "");
 
   //to prevent going back to the top of the page
   event.preventDefault();
