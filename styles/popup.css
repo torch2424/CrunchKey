@@ -1,19 +1,26 @@
-@charset "utf-8";
-/* CSS Document */
+@import url("normalize.min.css");
 
-/*The font "Caviar dreams" */
-@font-face
-{
-    font-family: calcFont;
-    src: url(CaviarDreams.ttf);
+html {
+  width: 300px;
+  min-height: 300px;
+  padding: 10px;
+}
+
+body {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+#notice {
+    padding-bottom: 10px;
 }
 
 /* The whole content File(Main div)*/
 #wrapper
 {
-	font-family: calcFont;
 	color: #000000;
-	margin:10px;
+	margin: 10px;
   position: relative;
 }
 
@@ -135,20 +142,17 @@ p
   margin-left:5%;
 }
 
-iframe
-{
+iframe {
   border:0px;
   width: 80vmin;
   height: 60vmin;
 }
 
-form
-{
+form {
 	text-align: center;
 }
 
-#contactHead
-{
+#contactHead {
 	text-align: center;
 }
 
@@ -310,3 +314,4 @@ footer
 		margin: .1em;
 	}
 }
+

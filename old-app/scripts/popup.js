@@ -1,11 +1,6 @@
-'use strict';
+// This was written when I was first learning Web Dev
 
-//This was written when I was first learning Web Dev
-//This code can be improved, and I am open to any
-//Efficiency Pull requests, because currently it works
-//And it is just a simple chrome extension :)
-
-//Our arraylists for our numbers and operators
+// Our arraylists for our numbers and operators
 var operators = [];
 var priority = [];
 var operatorOrder = [];
