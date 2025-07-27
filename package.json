@@ -1,6 +1,6 @@
 {
   "name": "crunchkey",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A Chrome Extension that calculates math strings as you type them! No order of operations, so the math can flow as you go!",
   "main": "index.js",
   "scripts": {
